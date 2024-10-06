@@ -1,7 +1,7 @@
 // Include playwright module
 const { test, expect } = require('@playwright/test');
 
-// Write a scenario test
+// Write a scenario test to check title
 test('Validate Youtube title', async ({ page }) => {
     // Go to URL
     await page.goto('https://www.youtube.com/');
