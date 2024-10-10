@@ -2,22 +2,18 @@
 const { test, expect } = require('@playwright/test');
 
 // Write a scenario test to check title
-test('Validate Youtube title', async ({ page }) => {
+test('Handle dropdown list in playwright', async ({ page }) => {
     // Go to URL
-    await page.goto('https://www.youtube.com/');
+    await page.goto('https://www.facebook.com/');
     
-    // Search with keywords
-    await page.getByPlaceholder('Search').click();
-    await page.getByPlaceholder('Search').fill('cypress by testers talk');
-    
-    await expect(page.getByRole('button', { name: 'Search', exact: true })).toBeEnabled();
-    await page.getByRole('button', { name: 'Search', exact: true }).click();
-   
+    await page.getByText('Create new account').click();
+    const dropDownList = await page.locator('#mounth');
+    await expect(dropDownList).toHaveValue('10');
+    dropDownList.selectOption('5');
+    dropDownList.selectOption('7');
+    dropDownList.selectOption('Oct');
 
-   
-    // Click on playlist
-    await page.getByRole('link', { name: 'Cypress by Testers Talk☑️' }).click();
+    await page.waitForTimeout(5000);
+
     
-    // Validate title
-    await expect(page).toHaveTitle('Cypress Tutorial Full Course 2023 | Learn Cypress in 5 Hrs - YouTube');
 });
