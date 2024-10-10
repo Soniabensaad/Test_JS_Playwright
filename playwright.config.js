@@ -27,30 +27,25 @@ module.exports = defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
-    screenshot : 'only-on-failture',
-    testIdAttribute:'autocomplete',
+    /* Corrected 'only-on-failure' */
+    screenshot: 'only-on-failure',
+    testIdAttribute: 'autocomplete',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'retain-on-failure ',
+    trace: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */
   projects: [
-    //{
-     //use: { ...devices['Desktop Chrome'] },
-  //  },
-
-    //{
-     // name: 'firefox',
-    //  use: { ...devices['Desktop Firefox'] },
-    //},
-
-    //{
-    //  name: 'webkit',
-    //  use: { ...devices['Desktop Safari'] },
-    //},
-
-    /* Test against mobile viewports. */
+    // Uncomment to use Firefox, Webkit, or mobile testing
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
     // {
     //   name: 'Mobile Chrome',
     //   use: { ...devices['Pixel 5'] },
@@ -59,16 +54,12 @@ module.exports = defineConfig({
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },
     // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    //},
-     {
-       name: 'Google Chrome',
-       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-     },
+    
+    /* Test on Google Chrome */
+    {
+      name: 'Google Chrome',
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    },
   ],
 
   /* Run your local dev server before starting the tests */

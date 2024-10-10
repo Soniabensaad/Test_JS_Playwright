@@ -16,7 +16,7 @@ test('Validate Youtube title', async ({ page }) => {
 
    
     // Click on playlist
-    await page.getByRole('link', { name: 'Cypress by Testers Talk☑️' }).click();
+    await page.getByRole('link', { name: 'Cypress  Testers Talk☑️' }).click();
     
     // Validate title
     await expect(page).toHaveTitle('Cypress Tutorial Full Course 2023 | Learn Cypress in 5 Hrs - YouTube');
