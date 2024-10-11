@@ -7,9 +7,9 @@
     },
 
 
-    "qaTestData":{
-        "skill1":" javascript by testers talk",
-        "skill2": "rest by testers talk",
+    "stageTestData":{
+        "skill1":"js by testers talk",
+        "skill2": "spectflow by testers talk",
         "skill3": "Api by testers talk"
        
     }
